@@ -172,7 +172,7 @@ const Faucet = () => {
   }
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-orange-700 to-black text-white p-5">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-black text-white p-5">
       <div className="w-full max-w-3xl px-4">
         <div className="text-center mb-10">
           <h1 className="text-5xl font-bold bg-gradient-to-r from-[#f86522] to-[#ffa02f] bg-clip-text text-transparent mb-4">
