@@ -154,46 +154,105 @@ const Faucet = () => {
   }, [networkSwitchAttempted, chainId]);
 
   return (
+    
     <div className="min-h-screen flex flex-col items-center justify-center bg-black text-white p-5">
-      <h1 className="text-4xl text-orange-500 font-bold">Core Testnet Faucet</h1>
-      <p className="mt-2 text-gray-300">We are working on the faucet, but for now, you have to pay a small fee.</p>
-
-      {account ? (
-        <p className="mt-4 text-orange-400">Connected: {account}</p>
-      ) : (
-        <button
-          onClick={connectWallet}
-          className="mt-4 px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white rounded-lg shadow-md transition"
-          disabled={isSwitchingNetwork}
-        >
-          {isSwitchingNetwork ? "Switching Network..." : "Connect Wallet"}
-        </button>
-      )}
-
-      {account &&  (
-        <button
-          onClick={claimTokens}
-          className="mt-6 px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white rounded-lg shadow-md transition"
-          disabled={claiming}
-        >
-          {claiming ? "Claiming Tokens..." : "Claim Tokens"}
-        </button>
-      )}
-
-      {transactionHash && (
-        <p className="mt-4 text-green-400">
-          Transaction:{" "}
-          <a
-            href={`https://explorer.btcs.network/tx/${transactionHash}`} // Replace with the correct explorer URL for Core Testnet
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline"
-          >
-            {transactionHash.substring(0, 6)}...{transactionHash.substring(transactionHash.length - 4)}
-          </a>
+      <div className="text-center mb-12">
+        <h1 className="text-5xl font-bold bg-gradient-to-r from-[#f86522] to-[#ffa02f] bg-clip-text text-transparent mb-4">
+          Core Testnet Faucet
+        </h1>
+        <p className="text-gray-400 max-w-xl mx-auto">
+          Get testnet tokens to experiment with Core Testnet. Connect your wallet and claim tokens to start building.
         </p>
-      )}
+      </div>
+
+      <div className="w-full max-w-xl bg-[#1a1a1a] rounded-2xl p-8 shadow-xl border border-[#333333]">
+        {account && (
+          <div className="mb-6 p-4 rounded-lg bg-[#242424] flex items-center justify-between">
+            <p className="text-orange-400 text-sm">Connected: {account}</p>
+          </div>
+        )}
+
+        {!account ? (
+          <button
+            onClick={connectWallet}
+            disabled={isSwitchingNetwork}
+            className="w-full py-4 px-6 bg-gradient-to-r from-[#f86522] to-[#ffa02f] rounded-lg font-semibold 
+                     hover:opacity-90 transition-all duration-200 flex items-center justify-center
+                     disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            {isSwitchingNetwork ? "Switching Network..." : "Connect Wallet"}
+          </button>
+        ) : (
+          <button
+            onClick={claimTokens}
+            disabled={claiming}
+            className="w-full py-4 px-6 bg-gradient-to-r from-[#f86522] to-[#ffa02f] rounded-lg font-semibold
+                     hover:opacity-90 transition-all duration-200 flex items-center justify-center
+                     disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            {claiming ? "Claiming Tokens..." : "Claim Tokens"}
+          </button>
+        )}
+
+        {transactionHash && (
+          <div className="mt-6 p-4 rounded-lg bg-[#242424]">
+            <div className="flex items-center justify-between">
+              <span className="text-gray-400 text-sm">Transaction:</span>
+              <a
+                href={`https://explorer.btcs.network/tx/${transactionHash}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#ffa02f] hover:text-[#f86522] transition-colors"
+              >
+                {transactionHash.substring(0, 6)}...{transactionHash.substring(transactionHash.length - 4)}
+              </a>
+            </div>
+          </div>
+        )}
+      </div>
     </div>
+    
+    
+    // <div className="min-h-screen flex flex-col items-center justify-center bg-black text-white p-5">
+    //   <h1 className="text-4xl text-orange-500 font-bold">Core Testnet Faucet</h1>
+    //   <p className="mt-2 text-gray-300">We are working on the faucet, but for now, you have to pay a small fee.</p>
+
+    //   {account ? (
+    //     <p className="mt-4 text-orange-400">Connected: {account}</p>
+    //   ) : (
+    //     <button
+    //       onClick={connectWallet}
+    //       className="mt-4 px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white rounded-lg shadow-md transition"
+    //       disabled={isSwitchingNetwork}
+    //     >
+    //       {isSwitchingNetwork ? "Switching Network..." : "Connect Wallet"}
+    //     </button>
+    //   )}
+
+    //   {account &&  (
+    //     <button
+    //       onClick={claimTokens}
+    //       className="mt-6 px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white rounded-lg shadow-md transition"
+    //       disabled={claiming}
+    //     >
+    //       {claiming ? "Claiming Tokens..." : "Claim Tokens"}
+    //     </button>
+    //   )}
+
+    //   {transactionHash && (
+    //     <p className="mt-4 text-green-400">
+    //       Transaction:{" "}
+    //       <a
+    //         href={`https://explorer.btcs.network/tx/${transactionHash}`} // Replace with the correct explorer URL for Core Testnet
+    //         target="_blank"
+    //         rel="noopener noreferrer"
+    //         className="underline"
+    //       >
+    //         {transactionHash.substring(0, 6)}...{transactionHash.substring(transactionHash.length - 4)}
+    //       </a>
+    //     </p>
+    //   )}
+    // </div>
   );
 };
 
