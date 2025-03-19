@@ -12,7 +12,7 @@ Welcome to the CORE-TASHI-FAUCET! This faucet allows you to obtain TASHIBTC (TBT
 To request TBTC from the faucet:
 
 1. Visit the faucet application: [coro-tashi-faucet.vercel.app](https://coro-tashi-faucet.vercel.app/)
-2. Enter your Core testnet wallet address.
+2.Connect your metamask wallet .
 3. Click the "Request TBTC" button.
 4. If successful, TBTC will be sent to your address, up to the daily limit.
 
