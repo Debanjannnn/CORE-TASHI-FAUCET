@@ -342,7 +342,7 @@ const Faucet = () => {
                 <div className="flex justify-between">
                   <span className="text-gray-400">Address:</span>
                   <a
-                    href={`https://explorer.btcs.network/address/${CONTRACT_ADDRESS}`}
+                    href={`https://scan.test2.btcs.network/address/${CONTRACT_ADDRESS}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-white hover:text-orange-400 transition-colors"
@@ -361,22 +361,22 @@ const Faucet = () => {
             <CardContent>
               <div className="space-y-1 text-sm">
                 <a
-                  href="https://explorer.btcs.network"
+                  href="https://scan.test2.btcs.network/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex justify-between text-white hover:text-orange-400 transition-colors"
                 >
                   <span>Block Explorer</span>
-                  <ExternalLink className="h-3 w-3" />
+                  <ExternalLink href="https://scan.test2.btcs.network/" className="h-3 w-3" />
                 </a>
                 <a
-                  href="#"
+                  href="https://kaushiks-organization.gitbook.io/coro-tashi/how-to-get-started/quickstart/publish-your-docs"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex justify-between text-white hover:text-orange-400 transition-colors"
                 >
                   <span>Documentation</span>
-                  <ExternalLink className="h-3 w-3" />
+                  <ExternalLink href="https://kaushiks-organization.gitbook.io/coro-tashi/how-to-get-started/quickstart/publish-your-docs" className="h-3 w-3" />
                 </a>
               </div>
             </CardContent>
